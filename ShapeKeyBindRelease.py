@@ -24,10 +24,10 @@ for k in srcData:
             fcurve = trgData[shape].driver_add("value")
             var = fcurve.driver.variables.new()
             fcurve.driver.type = "AVERAGE"
-            tar0 = var.targets[0]
-            tar0.id_type = "KEY"
-            tar0.id = bpy.data.shape_keys[bpy.data.objects[srcObject].active_shape_key.id_data.name]
-            tar0.data_path = sk1_datapath
+            target = var.targets[0]
+            target.id_type = "KEY"
+            target.id = bpy.data.shape_keys[bpy.data.objects[srcObject].active_shape_key.id_data.name]
+            target.data_path = sk1_datapath
             
             fcurve.keyframe_points.insert(0,0)
             fcurve.keyframe_points.insert(1,1)
